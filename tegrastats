@@ -1,0 +1,7 @@
+#!/bin/sh
+#for test
+while true
+do
+    echo "CPU 335/224 GPU 445/334"
+    sleep 1
+done
