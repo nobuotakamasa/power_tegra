@@ -4,8 +4,8 @@ from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import String
 import subprocess
 
-#tegrastats = "tegrastats"
-tegrastats = "./tegrastats"
+tegrastats = "tegrastats"
+#tegrastats = "./tegrastats"
 
 def main():
     rclpy.init()
