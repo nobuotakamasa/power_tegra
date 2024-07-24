@@ -2,6 +2,6 @@
 #for test
 while true
 do
-    echo "aa CPU 335/224 GPU 445/334"
+    echo "RAM 1308/31929MB (lfb 7345x4MB) SWAP 0/15965MB (cached 0MB) CPU [1%@1169,0%@1168,1%@1169,0%@1168,off,off,off,off] EMC_FREQ 2%@408 GR3D_FREQ 0%@318 VIC_FREQ 0%@115 APE 150 MTS fg 0% bg 1% AO@37C GPU@38.5C Tdiode@38.75C PMIC@100C AUX@38C CPU@38.5C thermal@38.3C Tboard@36C GPU 96/96 CPU 386/386 SOC 772/772 CV 0/0 VDDRQ 289/289 SYS5V 2238/2238"
     sleep 1
 done
