@@ -4,9 +4,6 @@ from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import String
 import subprocess
 
-tegrastats = "tegrastats"
-#tegrastats = "./tegrastats"
-
 def main():
     rclpy.init()
     node = rclpy.create_node('power_publisher')
@@ -19,14 +16,16 @@ def main():
     topic_name = '/ecu/'+ecu_name
     #print("topic_name ", topic_name)
 
-    command = ["sudo", tegrastats, "--interval", str(interval), "--verbose"]
-    print(command)
+    command = ["sudo", "tegrastats", "--interval", str(interval), "--verbose"]
+    #print(command)
     process = subprocess.Popen(command, stdout = subprocess.PIPE, stderr=subprocess.PIPE)
 
     # Create a publisher to publish the output
     publisher = node.create_publisher(Float32MultiArray, topic_name, 10)
     while rclpy.ok():
         result0 = str(process.stdout.readline().strip())
+        #node.get_logger().info(f'Publishing: {result0}')
+
         #print(result)
         result = result0.split(' ')
         #print(result)

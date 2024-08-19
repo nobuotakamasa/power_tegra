@@ -6,6 +6,6 @@ process = subprocess.Popen(command, stdout = subprocess.PIPE, stderr=subprocess.
 while True:
 	output = process.stdout.readline()
 	output = output.strip()
-	output = str(output).split(' ')
+	#output = str(output).split(' ')
 	print(output)
 

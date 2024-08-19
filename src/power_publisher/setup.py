@@ -23,7 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'power_publisher = power_publisher.power_publisher:main',
+            'tegra_publisher = power_publisher.tegra_publisher:main',
+            'nvidia_publisher = power_publisher.nvidia_publisher:main',
         ],
     },
 )

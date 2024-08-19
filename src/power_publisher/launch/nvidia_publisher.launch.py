@@ -15,11 +15,10 @@ def generate_launch_description():
         default_value='no_name',
         description='name of this ECU'
     )
-
     node = Node(
         package='power_publisher',
-        executable='power_publisher',
-        name='power_publisher',
+        executable='nvidia_publisher',
+        name='nvidia_publisher',
         output='screen',
         parameters=[{
             'ecu_name': LaunchConfiguration('ecu_name')
