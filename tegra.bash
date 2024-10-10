@@ -3,7 +3,7 @@ source ./install/setup.bash
 sudo echo ""
 ARCH=$(uname -m)
 if [ "$ARCH" = "x86_64" ]; then
-    export PATH="./:$PATH"
+    export PATH="$PWD:$PATH"
 fi
 echo $ARCH
 echo $PATH
