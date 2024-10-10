@@ -25,7 +25,7 @@ def main():
     #topic name
     node.declare_parameter('ecu_name', "no_name")
     ecu_name = node.get_parameter('ecu_name').value
-    topic_name = '/ecu/'+ecu_name+"/gpu"
+    topic_name = '/ecu/'+ecu_name.replace('-','')+"/gpu"
     #print("topic_name ", topic_name)
 
     command = ["nvidia-smi", "--query-gpu=timestamp,power.draw",

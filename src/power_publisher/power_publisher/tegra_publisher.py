@@ -13,7 +13,7 @@ def main():
     #topic name
     node.declare_parameter('ecu_name', "no_name")
     ecu_name = node.get_parameter('ecu_name').value
-    topic_name = '/ecu/'+ecu_name
+    topic_name = '/ecu/'+ecu_name.replace('-','')
     #print("topic_name ", topic_name)
 
     command = ["sudo", "tegrastats", "--interval", str(interval), "--verbose"]
