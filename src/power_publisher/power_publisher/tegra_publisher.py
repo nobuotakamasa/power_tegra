@@ -3,10 +3,16 @@ import rclpy
 from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import String
 import subprocess
+import socket
+
+hostname = socket.gethostname()
+#print("Hostname:", hostname)
+hostname = hostname.replace('-', '_')
+print("Modified Hostname:", hostname)
 
 def main():
     rclpy.init()
-    node = rclpy.create_node('power_publisher')
+    node = rclpy.create_node('power_publisher'+hostname)
     #interval time
     node.declare_parameter('interval', 1001)
     interval = node.get_parameter('interval').value
