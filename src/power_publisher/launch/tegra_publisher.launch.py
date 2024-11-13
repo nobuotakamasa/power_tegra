@@ -3,6 +3,13 @@ from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 
+import socket
+
+hostname = socket.gethostname()
+#print("Hostname:", hostname)
+hostname = hostname.replace('-', '_')
+#print("Modified Hostname:", hostname)
+
 def generate_launch_description():
     interval = DeclareLaunchArgument(
         'interval',
@@ -19,7 +26,7 @@ def generate_launch_description():
     node = Node(
         package='power_publisher',
         executable='tegra_publisher',
-        name='tegra_publisher',
+        name='tegra_publisher_'+hostname,
         output='screen',
         parameters=[{
             'ecu_name': LaunchConfiguration('ecu_name')
